@@ -1,0 +1,397 @@
+/* RESET Y BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 20px 40px;
+}
+
+.logo {
+  color: #c9a96e;
+  font-size: 24px;
+  letter-spacing: 3px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #c9a96e;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h2 {
+  font-size: 48px;
+  margin-bottom: 16px;
+  color: #c9a96e;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 32px;
+  color: #aaa;
+}
+
+.btn {
+  background-color: #c9a96e;
+  color: white;
+  padding: 14px 36px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.3s;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #b8935a;
+}
+
+/* CATALOGO */
+.catalogo {
+  text-align: center;
+  padding: 80px 40px;
+}
+
+.catalogo h2 {
+  font-size: 36px;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  color: #888;
+  margin-bottom: 50px;
+  font-size: 17px;
+}
+
+.productos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.producto {
+  background-color: white;
+  border-radius: 16px;
+  width: 260px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.producto:hover {
+  transform: translateY(-8px);
+}
+
+.producto img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.producto-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.producto-info h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.producto-info p {
+  color: #c9a96e;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.btn-comprar {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.3s;
+  display: inline-block;
+}
+
+.btn-comprar:hover {
+  background-color: #c9a96e;
+}
+
+/* CONTACTO */
+.contacto {
+  text-align: center;
+  padding: 80px 40px;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.contacto h2 {
+  font-size: 36px;
+  color: #c9a96e;
+  margin-bottom: 10px;
+}
+
+.contacto .subtitulo {
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .menu {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .productos {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero h2 {
+    font-size: 26px;
+  }
+
+  .producto {
+    width: 100%;
+  }
+
+  .catalogo {
+    padding: 60px 20px;
+  }
+}
+
+/* CARRITO */
+.carrito {
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #c9a96e;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background 0.3s;
+}
+
+.carrito:hover {
+  background-color: #b8935a;
+}
+
+#contador-carrito {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* POPUP CHECKOUT */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-overlay.activo {
+  display: flex;
+}
+
+.popup {
+  background-color: white;
+  border-radius: 20px;
+  padding: 40px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.popup h2 {
+  font-size: 24px;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.popup-subtitulo {
+  color: #888;
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.3s;
+  cursor: text;
+}
+
+.input:focus {
+  border-color: #c9a96e;
+}
+
+.btn-pagar {
+  width: 100%;
+  padding: 14px;
+  background-color: #c9a96e;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background 0.3s;
+}
+
+.btn-pagar:hover {
+  background-color: #b8935a;
+}
+
+.btn-cerrar {
+  width: 100%;
+  padding: 12px;
+  background-color: transparent;
+  color: #888;
+  border: 2px solid #eee;
+  border-radius: 30px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-cerrar:hover {
+  border-color: #1a1a1a;
+  color: #1a1a1a;
+}
+/* POPUP BIENVENIDA */
+.bienvenida-overlay {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bienvenida {
+  background-color: white;
+  border-radius: 20px;
+  padding: 50px 40px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.bienvenida h2 {
+  font-size: 28px;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.bienvenida p {
+  color: #888;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.bienvenida-descuento {
+  background-color: #f9f3ea;
+  border-radius: 10px;
+  padding: 12px;
+  color: #c9a96e !important;
+  font-size: 15px !important;
+  margin-bottom: 24px !important;
+}
+
+.btn-bienvenida {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 14px 36px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-bienvenida:hover {
+  background-color: #c9a96e;
+}
